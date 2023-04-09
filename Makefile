@@ -1,7 +1,7 @@
 vpath %.sql sql/query ./sql/schema
 vpath query/%.sql sql/query
 vpath %.sql sql/query ./sql/schema
-SHELL=/bin/bash
+SHELL=/bin/sh
 GO := $(shell command -v go 2> /dev/null)
 TERN := $(shell command -v tern 2> /dev/null)
 

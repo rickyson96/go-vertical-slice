@@ -53,3 +53,7 @@ func SetupSuiteTest() {
 		gnomock.Stop(container)
 	})
 }
+
+func BeforeSuite(func func()) {
+	panic("unimplemented")
+}

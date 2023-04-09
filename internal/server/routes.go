@@ -5,6 +5,7 @@ import (
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/julienschmidt/httprouter"
+	"github.com/rickyson96/go-vertical-slice/internal/features/createuser"
 	"github.com/rickyson96/go-vertical-slice/internal/features/healthcheck"
 )
 
@@ -12,6 +13,8 @@ func Routes(pool *pgxpool.Pool) http.Handler {
 	router := httprouter.New()
 
 	router.GET("/health", healthcheck.New())
+
+	router.POST("/users", createuser.New(pool))
 
 	return router
 }
